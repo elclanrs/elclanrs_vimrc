@@ -1,52 +1,81 @@
 set nocompatible
-filetype off
+filetype plugin indent on
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call pathogen#infect()
+call pathogen#helptags()
 
-autocmd VimEnter * set vb t_vb= "stop beep
-set lines=40 columns=120
-autocmd BufEnter * setlocal bufhidden=delete "only one buffer in view
-:au FocusLost * silent! wa "Save when lose focus
-set clipboard=unnamed
-set backspace=2
-set guitablabel=%t "Only filename in tab
-set guioptions-=T  "remove toolbar
+set encoding=utf-8
+
+let mapleader = ","
+nnoremap ; :
+
+au VimEnter * set vb t_vb= " stop beep
+au BufEnter * setlocal bufhidden=delete " only one buffer in view
+set lines=50 columns=170
+set clipboard=unnamed " fix clipboard
+set guitablabel=%t " only filename in tab
+set guioptions-=T  " remove toolbar
 set hlsearch
-"set spell
+set history=500 " undo history
+set wildmode=list:longest
+set ch=2
 
-" Autocomplete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
-" Remove trailing spaces when saving
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Plugins
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/JavaScript-Indent'
-Bundle 'rodnaph/vim-color-schemes'
-Bundle 'vim-scripts/Color-Sampler-Pack'
-Bundle 'wavded/vim-stylus'
-Bundle 'groenewege/vim-less'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'mattn/zencoding-vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'vim-scripts/loremipsum'
-Bundle 'jnwhiteh/vim-golang'
+" Scroll
+set scrolloff=8 "Start scrolling when we're 8 lines away from margins
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 
 set guifont=Meslo_LG_L_DZ:h9:cANSI
-colorscheme bclear
+colorscheme Kellys
 syntax on
 set cursorline
 set number
+set ruler
 set wrap
 set autoindent
-set shiftwidth=2
 set expandtab
+set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-set encoding=utf-8
+set backspace=2
+
+" Folding settings
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+" Autocomplete
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType css set omnifunc=csscomplete#CompleteCSS
+au FileType xml set omnifunc=xmlcomplete#CompleteTags
+au FileType php set omnifunc=phpcomplete#CompletePHP
+
+" Saving
+au FocusLost * silent! wa " save when lose focus
+au BufWritePre * :%s/\s\+$//e " Remove trailing spaces when saving
+noremap  <C-s> :wa<CR>
+
+" Syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loclist=1
+let g:syntastic_quiet_warnings=0
+let g:syntastic_check_on_open=1
+
+" NERDTree
+au vimenter * NERDTree
+let g:NERDTreeChDirMode=2
+map <leader>n :NERDTreeToggle<CR>
+
+" Plugins at github
+"vim-scripts/JavaScript-Indent
+"rodnaph/vim-color-schemes
+"vim-scripts/Color-Sampler-Pack
+"wavded/vim-stylus
+"groenewege/vim-less
+"digitaltoad/vim-jade
+"mattn/zencoding-vim
+"kchmck/vim-coffee-script
+"vim-scripts/loremipsum
+"scrooloose/syntastic
