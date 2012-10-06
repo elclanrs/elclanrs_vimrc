@@ -6,15 +6,20 @@ call pathogen#helptags()
 
 let mapleader = ","
 nnoremap ; :
-let g:SuperTabDefaultCompletionType = "context"
+autocmd BufEnter * if &filetype == "" | setlocal ft=javascript | endif " default new buffer to JS
 
 au VimEnter * set vb t_vb= " stop beep
 au BufEnter * setlocal bufhidden=delete " only one buffer in view
 
+" Auto quickfix
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+set autoread
 set encoding=utf-8
 set hidden
 set magic " regex
-set lines=45 columns=150
+set lines=50 columns=150
 set clipboard=unnamed " fix clipboard
 set guitablabel=%t " only filename in tab
 set guioptions-=T  " remove toolbar
@@ -29,8 +34,9 @@ set scrolloff=8 "Start scrolling when we're 8 lines away from margins
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-set guifont=Meslo_LG_L_DZ:h9:cANSI
-colorscheme Kellys
+set guifont=Liberation_Mono:h9:cANSI
+set background=dark
+colorscheme solarized
 syntax on
 set cursorline
 set number
@@ -49,16 +55,9 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
-" Autocomplete
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-au FileType html set omnifunc=htmlcomplete#CompleteTags
-au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType xml set omnifunc=xmlcomplete#CompleteTags
-au FileType php set omnifunc=phpcomplete#CompletePHP
-
 " Saving
 au FocusLost * silent! wa " save when lose focus
-au BufWritePre * :%s/\s\+$//e " Remove trailing spaces when saving
+autocmd FileType html,css,javascript,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 noremap  <C-s> :wa<CR>
 
 " Tabs
@@ -79,6 +78,15 @@ let g:NERDTreeChDirMode=2
 map <leader>n :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 
+" Coffeescript
+au BufWritePost *.coffee silent CoffeeMake! --bare -b | cwindow | redraw!
+
+" Rails
+let g:ruby_path = 'C:\RailsInstaller\Ruby1.9.3\bin'
+
+" Python
+au FileType python set softtabstop=4 shiftwidth=4
+
 " Plugins at github
 "vim-scripts/JavaScript-Indent
 "rodnaph/vim-color-schemes
@@ -92,3 +100,4 @@ map <leader>r :NERDTreeFind<cr>
 "scrooloose/syntastic
 "ervandew/supertab
 "godlygeek/tabular
+"leafgarland/typescript-vim
