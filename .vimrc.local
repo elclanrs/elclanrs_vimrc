@@ -1,0 +1,19 @@
+" Bundles
+UnBundle 'myusuf3/numbers.vim'
+
+nnoremap ; :
+set lines=50 columns=140
+map <leader>tab :tabe<cr>
+
+au FocusLost * silent! wa " save when lose focus
+
+set guifont=Liberation\ Mono\ 9
+
+set shiftwidth=2                " use indents of 2 spaces
+set tabstop=2                   " an indentation every four columns
+set softtabstop=2               " let backspace delete indent
+
+set nofoldenable
+let g:DisableAutoPHPFolding = 1
+
+let g:indent_guides_enable_on_vim_startup = 0
