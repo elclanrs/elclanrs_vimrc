@@ -29,9 +29,9 @@ set guifont=Liberation\ Mono\ 9
 
 set nospell
 
-set shiftwidth=2                " use indents of 2 spaces
-set tabstop=2                   " an indentation every four columns
-set softtabstop=2               " let backspace delete indent
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 set nofoldenable
 let g:DisableAutoPHPFolding = 1
