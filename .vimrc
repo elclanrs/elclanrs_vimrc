@@ -13,7 +13,7 @@ Bundle "kien/ctrlp.vim"
 Bundle "daylerees/colour-schemes"
 Bundle "tpope/vim-surround"
 Bundle "Shougo/neocomplcache"
-Bundle "spf13/vim-autoclose"
+Bundle "vim-scripts/Auto-Pairs"
 Bundle 'scrooloose/nerdcommenter'
 Bundle "mattn/zencoding-vim"
 
@@ -71,8 +71,8 @@ set mousehide
 set hidden
 set cursorline
 
-set noerrorbells
-set visualbell t_vb=
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 set wildmenu
 set wildmode=list:longest,full
@@ -106,6 +106,8 @@ set showbreak=\ >>>\
 set nolist
 
 set incsearch
+set ignorecase
+set smartcase 
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
 set nospell
@@ -113,6 +115,8 @@ set nospell
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+set copyindent
+set preserveindent
 
 set nofoldenable
 
@@ -123,3 +127,6 @@ let g:syntastic_enable_signs=1
 
 let g:neocomplcache_enable_at_startup = 1 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
+
+nnoremap Q <nop>
+nnoremap <c-z> <nop>
