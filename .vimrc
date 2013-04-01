@@ -13,7 +13,7 @@ Bundle "kien/ctrlp.vim"
 Bundle "daylerees/colour-schemes"
 Bundle "tpope/vim-surround"
 Bundle "Shougo/neocomplcache"
-Bundle "vim-scripts/Auto-Pairs"
+Bundle "vim-scripts/simple-pairs"
 Bundle 'scrooloose/nerdcommenter'
 Bundle "mattn/zencoding-vim"
 
