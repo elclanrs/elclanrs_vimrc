@@ -6,17 +6,19 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle "pangloss/vim-javascript"
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/syntastic"
-Bundle "kien/ctrlp.vim"
-Bundle "daylerees/colour-schemes"
-Bundle "tpope/vim-surround"
-Bundle "Shougo/neocomplcache"
-Bundle "vim-scripts/simple-pairs"
+Bundle 'pangloss/vim-javascript'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+Bundle 'daylerees/colour-schemes'
+Bundle 'tpope/vim-surround'
+Bundle 'Shougo/neocomplcache'
+Bundle 'vim-scripts/simple-pairs'
 Bundle 'scrooloose/nerdcommenter'
-Bundle "mattn/zencoding-vim"
+Bundle 'mattn/zencoding-vim'
+Bundle 'xolox/vim-session'
 
+Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'leshill/vim-json'
 Bundle 'groenewege/vim-less'
 Bundle 'pangloss/vim-javascript'
@@ -27,6 +29,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'wavded/vim-stylus'
+Bundle 'Glench/Vim-Jinja2-Syntax'
 
 Bundle 'daylerees/colour-schemes'
 
@@ -45,6 +48,7 @@ autocmd FocusLost * silent! wa " save when lose focus
 
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead *.twig set filetype=jinja
 
 autocmd BufWritePre *.* call TrimEndLines()
 function TrimEndLines()
@@ -125,8 +129,12 @@ map <C-e> :NERDTreeToggle<CR>
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
-let g:neocomplcache_enable_at_startup = 1 
+let g:neocomplcache_enable_at_startup=1 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" 
+
+let g:session_autosave=1
+let g:session_autoload=1
+let g:session_default_to_last=1
 
 nnoremap Q <nop>
 nnoremap <c-z> <nop>
