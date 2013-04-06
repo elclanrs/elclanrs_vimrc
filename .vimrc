@@ -6,25 +6,25 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
-Bundle 'daylerees/colour-schemes'
 Bundle 'tpope/vim-surround'
 Bundle 'Shougo/neocomplcache'
 Bundle 'vim-scripts/simple-pairs'
+Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mattn/zencoding-vim'
 Bundle 'xolox/vim-session'
+Bundle 'duff/vim-bufonly'
 
-Bundle '2072/PHP-Indenting-for-VIm'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'othree/html5.vim'
 Bundle 'leshill/vim-json'
 Bundle 'groenewege/vim-less'
-Bundle 'pangloss/vim-javascript'
 Bundle 'briancollins/vim-jst'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
@@ -93,7 +93,7 @@ set autoindent
 nnoremap ; :
 let mapleader=','
 
-set guioptions-=T  "remove menu bar
+set guioptions-=T
 set guifont=DejaVu\ Sans\ Mono\ 10
 
 set autochdir
