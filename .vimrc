@@ -18,6 +18,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'xolox/vim-session'
 Bundle 'duff/vim-bufonly'
 
+Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'othree/html5.vim'
