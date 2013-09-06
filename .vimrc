@@ -187,6 +187,11 @@ let g:session_default_to_last='yes'
 nnoremap ; :
 let mapleader=','
 
+inoremap <C-c> <ESC>
+
+" Save all and exit
+map <c-q> :xa<cr>
+
 " Copy all to clipboard
 map <leader>aa gg"+yG
 
@@ -194,7 +199,6 @@ map <leader>aa gg"+yG
 map <F5> <Esc>:silent !google-chrome %<CR>
 
 " Disabled
-inoremap <C-c> <ESC>
 nnoremap Q <nop>
 nnoremap <c-z> <nop>
 
