@@ -96,6 +96,28 @@ autocmd BufWritePre *.* call TrimEndLines()
 autocmd FileType c,cpp,java,php,javascript,css autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 
+" Custom key bindings
+" ------------------------------------------------
+
+nnoremap ; :
+let mapleader=','
+
+inoremap <C-c> <ESC>
+
+" Save all and exit
+map <c-q> :xa<cr>
+
+" Copy all to clipboard
+map <leader>aa gg"+yG
+
+" Open file in Google Chrome
+map <F5> <Esc>:silent !google-chrome %<CR>
+
+" Disabled
+nnoremap Q <nop>
+nnoremap <c-z> <nop>
+
+
 " User config
 " ------------------------------------------------
 
@@ -179,28 +201,6 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:session_autosave='yes'
 let g:session_autoload='yes'
 let g:session_default_to_last='yes'
-
-
-" Custom key bindings
-" ------------------------------------------------
-
-nnoremap ; :
-let mapleader=','
-
-inoremap <C-c> <ESC>
-
-" Save all and exit
-map <c-q> :xa<cr>
-
-" Copy all to clipboard
-map <leader>aa gg"+yG
-
-" Open file in Google Chrome
-map <F5> <Esc>:silent !google-chrome %<CR>
-
-" Disabled
-nnoremap Q <nop>
-nnoremap <c-z> <nop>
 
 
 " Functions
