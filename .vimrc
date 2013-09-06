@@ -96,7 +96,7 @@ autocmd BufWritePre *.* call TrimEndLines()
 autocmd FileType c,cpp,java,php,javascript,css autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 
-" Custom key bindings
+" User config
 " ------------------------------------------------
 
 nnoremap ; :
@@ -116,10 +116,6 @@ map <F5> <Esc>:silent !google-chrome %<CR>
 " Disabled
 nnoremap Q <nop>
 nnoremap <c-z> <nop>
-
-
-" User config
-" ------------------------------------------------
 
 " Theme
 syntax on
