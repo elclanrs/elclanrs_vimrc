@@ -133,7 +133,7 @@ set ruler
 set laststatus=2
 set scrolloff=5
 
-set lines=45 columns=130
+set lines=50 columns=150
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
