@@ -100,6 +100,8 @@ autocmd FileType c,cpp,java,php,javascript,css autocmd BufWritePre <buffer> call
 " User config
 " ------------------------------------------------
 
+set hidden
+
 nnoremap ; :
 let mapleader=','
 
