@@ -58,6 +58,7 @@ Bundle 'gkz/vim-ls'
 Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
 Bundle 'sjl/badwolf'
+Bundle "w0ng/vim-hybrid"
 
 filetype plugin indent on
 
@@ -197,6 +198,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:session_autosave='yes'
 let g:session_autoload='yes'
 let g:session_default_to_last='yes'
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'r'
 
 
 " Functions
