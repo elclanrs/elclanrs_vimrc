@@ -37,7 +37,7 @@ Bundle 'godlygeek/tabular'
 
 Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'StanAngeloff/php.vim'
-Bundle 'pangloss/vim-javascript'
+"Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/html5.vim'
