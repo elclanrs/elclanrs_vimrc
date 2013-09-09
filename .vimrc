@@ -59,6 +59,7 @@ Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
 Bundle 'sjl/badwolf'
 Bundle "w0ng/vim-hybrid"
+Bundle "vim-scripts/mayansmoke"
 
 filetype plugin indent on
 
@@ -93,8 +94,7 @@ autocmd BufNewFile,BufRead *.php set ft=html | set ft=phtml
 autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
 
 " Trim whitespace on save
-autocmd BufWritePre *.* call TrimEndLines()
-autocmd FileType c,cpp,java,php,javascript,css autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 
 " User config
@@ -188,6 +188,7 @@ let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 
 " NERDTree
 map <C-e> :NERDTreeToggle<CR>
@@ -203,22 +204,3 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
-
-
-" Functions
-" ------------------------------------------------
-
-function! StripTrailingWhitespace()
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  let @/=_s
-  call cursor(l, c)
-endfunction
-
-function TrimEndLines()
-  let save_cursor = getpos(".")
-  :silent! %s#\($\n\s*\)\+\%$##
-  call setpos('.', save_cursor)
-endfunction
