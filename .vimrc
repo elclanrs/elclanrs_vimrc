@@ -10,6 +10,7 @@ set autochdir
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+
 " Plugins
 " ------------------------------------------------
 
@@ -37,8 +38,7 @@ Bundle 'godlygeek/tabular'
 
 Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'StanAngeloff/php.vim'
-"Bundle 'pangloss/vim-javascript'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'leshill/vim-json'
