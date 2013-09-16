@@ -54,6 +54,7 @@ Bundle 'xsbeats/vim-blade'
 Bundle 'juvenn/mustache.vim'
 Bundle 'aaronj1335/underscore-templates.vim'
 Bundle 'gkz/vim-ls'
+Bundle 'dag/vim2hs'
 
 Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
@@ -104,6 +105,7 @@ set hidden
 
 nnoremap ; :
 let mapleader=','
+map <leader>; @:
 
 inoremap <C-c> <ESC>
 
@@ -204,3 +206,12 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
+
+
+" Functions
+" ------------------------------------------------
+
+map <S-F5> :call Liveify() <cr>
+function Liveify()
+  silent! exec "! browserify -t liveify % > bundle.js"
+endfunction
