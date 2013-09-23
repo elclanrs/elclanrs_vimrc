@@ -10,6 +10,7 @@ set autochdir
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+set shell=bash\ --login
 
 " Plugins
 " ------------------------------------------------
