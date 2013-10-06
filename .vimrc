@@ -6,11 +6,12 @@ set undofile
 set undodir=~/.vimundo
 set autochdir
 
+set shell=bash\ --login
+
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-set shell=bash\ --login
 
 " Plugins
 " ------------------------------------------------
@@ -113,8 +114,8 @@ inoremap <C-c> <ESC>
 " Save all and exit
 map <c-q> :xa<cr>
 
-" Copy all to clipboard
-map <leader>aa gg"+yG
+" Copy/select all to clipboard
+map <leader>aa gg"+yGggVG
 
 " Open file in Google Chrome
 map <F5> <Esc>:silent !google-chrome %<CR>
