@@ -213,7 +213,7 @@ let g:ctrlp_working_path_mode = 'r'
 " Functions
 " ------------------------------------------------
 
-map <S-F5> :call Liveify() <cr>
-function Liveify()
+map <S-F5> :call Compile() <cr>
+function Compile()
   silent! exec "! browserify -t liveify % > bundle.js"
 endfunction
