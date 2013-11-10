@@ -45,6 +45,7 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'leshill/vim-json'
 Bundle 'groenewege/vim-less'
+Bundle 'digitaltoad/vim-jade'
 Bundle 'briancollins/vim-jst'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'hail2u/vim-css3-syntax'
@@ -195,7 +196,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
 " NERDTree
-map <C-e> :NERDTreeToggle<CR>
+nmap <C-e> :NERDTreeToggle<CR>
 let g:neocomplcache_enable_at_startup=1
 
 " Supertab
@@ -208,6 +209,11 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
+
+" Emmet
+imap <C-e> <C-y>,
+
+div
 
 
 " Functions
