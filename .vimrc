@@ -213,9 +213,6 @@ let g:ctrlp_working_path_mode = 'r'
 " Emmet
 imap <C-e> <C-y>,
 
-div
-
-
 " Functions
 " ------------------------------------------------
 
