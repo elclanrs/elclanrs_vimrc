@@ -45,7 +45,6 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'leshill/vim-json'
 Bundle 'groenewege/vim-less'
-Bundle 'digitaltoad/vim-jade'
 Bundle 'briancollins/vim-jst'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'hail2u/vim-css3-syntax'
@@ -144,7 +143,7 @@ set lines=50 columns=150
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Inconsolata\ 14
 
 " Menus
 set wildmenu
@@ -196,7 +195,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
 " NERDTree
-nmap <C-e> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeToggle<CR>
 let g:neocomplcache_enable_at_startup=1
 
 " Supertab
@@ -210,13 +209,11 @@ let g:session_default_to_last='yes'
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
 
-" Emmet
-imap <C-e> <C-y>,
 
 " Functions
 " ------------------------------------------------
 
-map <S-F5> :call Compile() <cr>
-function Compile()
+map <S-F5> :call Liveify() <cr>
+function Liveify()
   silent! exec "! browserify -t liveify % > bundle.js"
 endfunction
