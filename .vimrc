@@ -227,6 +227,5 @@ imap <C-e> <C-y>,
 
 map <S-F5> :call Compile() <cr>
 function Compile()
-  "silent! exec "! browserify -d -t es6ify % > bundle.js"
-  exec "! browserify -d -t es6ify % | node"
+  silent! exec "! browserify -d -t es6ify % > bundle.js"
 endfunction
