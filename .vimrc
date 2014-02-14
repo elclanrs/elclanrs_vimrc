@@ -45,6 +45,7 @@ Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'othree/html5.vim'
 Bundle 'leshill/vim-json'
 Bundle 'groenewege/vim-less'
+Bundle 'digitaltoad/vim-jade'
 Bundle 'briancollins/vim-jst'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'hail2u/vim-css3-syntax'
@@ -57,12 +58,18 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'aaronj1335/underscore-templates.vim'
 Bundle 'gkz/vim-ls'
 Bundle 'dag/vim2hs'
+Bundle 'lambdatoast/elm.vim'
+Bundle 'tkztmk/vim-vala'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 
 Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
 Bundle 'sjl/badwolf'
 Bundle "w0ng/vim-hybrid"
 Bundle "vim-scripts/mayansmoke"
+Bundle "29decibel/codeschool-vim-theme"
 
 filetype plugin indent on
 
@@ -99,11 +106,13 @@ autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
 " Trim whitespace on save
 autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
 
 " User config
 " ------------------------------------------------
 
 set hidden
+set lazyredraw
 
 nnoremap ; :
 let mapleader=','
@@ -143,7 +152,8 @@ set lines=50 columns=150
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-set guifont=Inconsolata\ 14
+"set guifont=DejaVu\ Sans\ Mono\ 10
+set guifont=Inconsolata\ 12
 
 " Menus
 set wildmenu
@@ -195,7 +205,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
 " NERDTree
-map <C-e> :NERDTreeToggle<CR>
+nmap <C-e> :NERDTreeToggle<CR>
 let g:neocomplcache_enable_at_startup=1
 
 " Supertab
@@ -209,11 +219,14 @@ let g:session_default_to_last='yes'
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
 
+" Emmet
+imap <C-e> <C-y>,
 
 " Functions
 " ------------------------------------------------
 
-map <S-F5> :call Liveify() <cr>
-function Liveify()
-  silent! exec "! browserify -t liveify % > bundle.js"
+map <S-F5> :call Compile() <cr>
+function Compile()
+  "silent! exec "! browserify -d -t es6ify % > bundle.js"
+  exec "! browserify -d -t es6ify % | node"
 endfunction
