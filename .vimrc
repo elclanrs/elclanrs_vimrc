@@ -109,7 +109,7 @@ autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$/
 
 autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
 
-# Fix terminal cursor for Gnome terminal
+" Fix terminal cursor for Gnome terminal
 if has("autocmd")
   au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
   au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
