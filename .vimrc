@@ -63,6 +63,7 @@ Bundle 'tkztmk/vim-vala'
 Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+Bundle 'wting/rust.vim'
 
 Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
@@ -107,6 +108,13 @@ autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
 autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
+
+# Fix terminal cursor for Gnome terminal
+if has("autocmd")
+  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+endif
 
 " User config
 " ------------------------------------------------
@@ -209,6 +217,7 @@ nmap <C-e> :NERDTreeToggle<CR>
 let g:neocomplcache_enable_at_startup=1
 
 " Supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Sessions
@@ -227,5 +236,6 @@ imap <C-e> <C-y>,
 
 map <S-F5> :call Compile() <cr>
 function Compile()
-  silent! exec "! browserify -d -t es6ify % > bundle.js"
+  "silent! exec "! browserify -d -t es6ify % > bundle.js"
+  exec "! browserify -d -t es6ify % | node"
 endfunction
