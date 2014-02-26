@@ -30,12 +30,10 @@ Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mattn/emmet-vim'
 Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-misc'
 Bundle 'duff/vim-bufonly'
 Bundle 'tpope/vim-endwise'
 Bundle 'ervandew/supertab'
 Bundle 'kana/vim-smartinput'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 
 Bundle '2072/PHP-Indenting-for-VIm'
@@ -78,14 +76,6 @@ filetype plugin indent on
 " Autocmd
 " ------------------------------------------------
 
-" Autompletition
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-
 " Default new buffer to JavaScript
 autocmd BufEnter * if &filetype == "" | setlocal ft=javascript | endif
 
@@ -109,12 +99,12 @@ autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$/
 
 autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
 
-" Fix terminal cursor for Gnome terminal
-if has("autocmd")
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-endif
+" Fix terminal cursor
+"if has("autocmd")
+  "au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+  "au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
+  "au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
+"endif
 
 " User config
 " ------------------------------------------------
@@ -160,7 +150,6 @@ set lines=50 columns=150
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-"set guifont=DejaVu\ Sans\ Mono\ 10
 set guifont=Inconsolata\ 12
 
 " Menus
@@ -204,8 +193,8 @@ set nospell
 " Plugin config
 " ------------------------------------------------
 
-let g:auto_save = 1
-let g:used_javascript_libs = 'jquery,underscore,backbone,angularjs'
+let g:auto_save=1
+let g:used_javascript_libs='jquery,underscore,backbone,angularjs'
 
 " Syntastic
 let g:syntastic_check_on_open=1
