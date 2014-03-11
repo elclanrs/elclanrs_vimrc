@@ -5,6 +5,7 @@ filetype off
 set undofile
 set undodir=~/.vimundo
 set autochdir
+set autoread
 
 set shell=bash\ --login
 
@@ -30,10 +31,12 @@ Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mattn/emmet-vim'
 Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-misc'
 Bundle 'duff/vim-bufonly'
 Bundle 'tpope/vim-endwise'
 Bundle 'ervandew/supertab'
 Bundle 'kana/vim-smartinput'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 
 Bundle '2072/PHP-Indenting-for-VIm'
@@ -69,12 +72,22 @@ Bundle 'sjl/badwolf'
 Bundle "w0ng/vim-hybrid"
 Bundle "vim-scripts/mayansmoke"
 Bundle "29decibel/codeschool-vim-theme"
+Bundle "gregsexton/Gravity"
+Bundle "djjcast/mirodark"
 
 filetype plugin indent on
 
 
 " Autocmd
 " ------------------------------------------------
+
+" Autompletition
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 
 " Default new buffer to JavaScript
 autocmd BufEnter * if &filetype == "" | setlocal ft=javascript | endif
@@ -99,7 +112,8 @@ autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$/
 
 autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
 
-" Fix terminal cursor
+autocmd BufNewFile,BufRead *.wisp set ft=clojure
+
 "if has("autocmd")
   "au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
   "au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
@@ -135,7 +149,8 @@ nnoremap <c-z> <nop>
 syntax on
 
 set t_Co=256
-colorscheme tomorrow-night
+colorscheme codeschool
+hi Conceal guibg=#232C31
 
 set mouse=a
 set mousehide
@@ -173,6 +188,9 @@ nnoremap <silent> <leader>r :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <leader>l :execute 'silent! tabmove ' . tabpagenr()<CR>
 set guitablabel=%t\ %M
 
+" Split
+set splitright
+
 " Text wrapping
 set wrap
 set linebreak
@@ -194,7 +212,7 @@ set nospell
 " ------------------------------------------------
 
 let g:auto_save=1
-let g:used_javascript_libs='jquery,underscore,backbone,angularjs'
+let g:used_javascript_lib s='jquery,underscore,backbone,angularjs'
 
 " Syntastic
 let g:syntastic_check_on_open=1
