@@ -212,7 +212,7 @@ set nospell
 " ------------------------------------------------
 
 let g:auto_save=1
-let g:used_javascript_lib s='jquery,underscore,backbone,angularjs'
+let g:used_javascript_lib='jquery,underscore,backbone,angularjs'
 
 " Syntastic
 let g:syntastic_check_on_open=1
