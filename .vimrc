@@ -35,8 +35,6 @@ Bundle 'xolox/vim-misc'
 Bundle 'duff/vim-bufonly'
 Bundle 'tpope/vim-endwise'
 Bundle 'ervandew/supertab'
-Bundle 'kana/vim-smartinput'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/tabular'
 
 Bundle '2072/PHP-Indenting-for-VIm'
@@ -53,7 +51,6 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'wavded/vim-stylus'
-Bundle 'lepture/vim-jinja'
 Bundle 'xsbeats/vim-blade'
 Bundle 'juvenn/mustache.vim'
 Bundle 'aaronj1335/underscore-templates.vim'
@@ -65,15 +62,19 @@ Bundle 'xolox/vim-lua-ftplugin'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'wting/rust.vim'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'qbbr/vim-twig'
 
 Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
-Bundle 'sjl/badwolf'
-Bundle "w0ng/vim-hybrid"
-Bundle "vim-scripts/mayansmoke"
-Bundle "29decibel/codeschool-vim-theme"
-Bundle "gregsexton/Gravity"
-Bundle "djjcast/mirodark"
+Bundle 'w0ng/vim-hybrid'
+Bundle '29decibel/codeschool-vim-theme'
+Bundle 'croaky/vim-colors-github'
+Bundle 'vim-scripts/darkspectrum'
+Bundle 'zeis/vim-kolor'
+Bundle 'morhetz/gruvbox'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -101,7 +102,6 @@ autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
 " Custom filetypes
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-autocmd BufNewFile,BufRead *.twig set filetype=jinja
 
 " Fix PHP-HTML mixed indentation
 autocmd BufNewFile,BufRead *.php set ft=html | set ft=phtml
@@ -150,7 +150,9 @@ syntax on
 
 set t_Co=256
 colorscheme codeschool
-hi Conceal guibg=#232C31
+
+set cole=0
+"hi Conceal guibg=#232C31
 
 set mouse=a
 set mousehide
@@ -161,7 +163,7 @@ set ruler
 set laststatus=2
 set scrolloff=5
 
-set lines=50 columns=150
+set lines=50 columns=160
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
