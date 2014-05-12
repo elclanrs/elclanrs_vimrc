@@ -35,6 +35,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'duff/vim-bufonly'
 Bundle 'tpope/vim-endwise'
 Bundle 'ervandew/supertab'
+Bundle 'kana/vim-smartinput'
 Bundle 'godlygeek/tabular'
 
 Bundle '2072/PHP-Indenting-for-VIm'
@@ -65,6 +66,7 @@ Bundle 'wting/rust.vim'
 Bundle 'wlangstroth/vim-racket'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'qbbr/vim-twig'
+Bundle 'JuliaLang/julia-vim'
 
 Bundle 'daylerees/colour-schemes'
 Bundle 'wjakob/vim-tomorrow-night'
@@ -186,6 +188,8 @@ set nofoldenable
 " Tabs
 map <c-t> :tabe<cr>
 map <c-w> :bd<cr>
+map <s-e> :tabn<cr>
+map <s-q> :tabp<cr>
 nnoremap <silent> <leader>r :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <leader>l :execute 'silent! tabmove ' . tabpagenr()<CR>
 set guitablabel=%t\ %M
