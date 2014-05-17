@@ -77,6 +77,7 @@ Bundle 'vim-scripts/darkspectrum'
 Bundle 'zeis/vim-kolor'
 Bundle 'morhetz/gruvbox'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 
 filetype plugin indent on
 
@@ -151,7 +152,7 @@ nnoremap <c-z> <nop>
 syntax on
 
 set t_Co=256
-colorscheme codeschool
+colorscheme base16-ocean
 
 set cole=0
 "hi Conceal guibg=#232C31
@@ -212,6 +213,8 @@ nmap <silent> <leader>/ :set invhlsearch<CR>
 
 " Spelling
 set nospell
+
+vnoremap <leader>t :Tabular<space>/
 
 
 " Plugin config
