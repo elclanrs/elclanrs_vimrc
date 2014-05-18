@@ -152,7 +152,12 @@ nnoremap <c-z> <nop>
 syntax on
 
 set t_Co=256
-colorscheme base16-ocean
+
+if has('gui_running')
+  colorscheme base16-ocean
+else
+  colorscheme tomorrow-night
+endif
 
 set cole=0
 "hi Conceal guibg=#232C31
