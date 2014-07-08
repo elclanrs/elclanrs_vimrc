@@ -13,7 +13,6 @@ set shell=bash\ --login
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 " Plugins
 " ------------------------------------------------
 
@@ -25,8 +24,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
-Bundle 'Shougo/neocomplcache'
-Bundle 'vim-scripts/SyntaxComplete'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mattn/emmet-vim'
@@ -67,9 +66,10 @@ Bundle 'wlangstroth/vim-racket'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'qbbr/vim-twig'
 Bundle 'JuliaLang/julia-vim'
+Bundle 'hhvm/vim-hack'
 
 Bundle 'daylerees/colour-schemes'
-Bundle 'wjakob/vim-tomorrow-night'
+Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'w0ng/vim-hybrid'
 Bundle '29decibel/codeschool-vim-theme'
 Bundle 'croaky/vim-colors-github'
@@ -80,7 +80,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'chriskempson/base16-vim'
 
 filetype plugin indent on
-
 
 " Autocmd
 " ------------------------------------------------
@@ -150,6 +149,7 @@ nnoremap <c-z> <nop>
 
 " Theme
 syntax on
+set bg=dark
 
 set t_Co=256
 
@@ -196,8 +196,8 @@ map <c-t> :tabe<cr>
 map <c-w> :bd<cr>
 map <s-e> :tabn<cr>
 map <s-q> :tabp<cr>
-nnoremap <silent> <leader>r :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <leader>l :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <silent> <leader>l :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <leader>r :execute 'silent! tabmove ' . tabpagenr()<CR>
 set guitablabel=%t\ %M
 
 " Split
@@ -208,6 +208,8 @@ set wrap
 set linebreak
 set showbreak=↪
 set nolist
+nnoremap j gj
+nnoremap k gk
 
 " Search
 set ignorecase
@@ -220,7 +222,6 @@ nmap <silent> <leader>/ :set invhlsearch<CR>
 set nospell
 
 vnoremap <leader>t :Tabular<space>/
-
 
 " Plugin config
 " ------------------------------------------------
@@ -235,7 +236,9 @@ let g:syntastic_auto_loc_list=1
 
 " NERDTree
 nmap <C-e> :NERDTreeToggle<CR>
-let g:neocomplcache_enable_at_startup=1
+
+" Neocomplcache
+"let g:neocomplcache_enable_at_startup=1
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
