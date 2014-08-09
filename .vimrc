@@ -10,74 +10,75 @@ set autoread
 set shell=bash\ --login
 
 " Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 " Plugins
 " ------------------------------------------------
 
-Plugin 'gmarik/vundle'
+Bundle 'gmarik/vundle'
 
-Plugin '907th/vim-auto-save'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'amirh/HTML-AutoCloseTag'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'mattn/emmet-vim'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'
-Plugin 'duff/vim-bufonly'
-Plugin 'tpope/vim-endwise'
-Plugin 'ervandew/supertab'
-Plugin 'kana/vim-smartinput'
-Plugin 'godlygeek/tabular'
+Bundle '907th/vim-auto-save'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-surround'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'mattn/emmet-vim'
+Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-misc'
+Bundle 'duff/vim-bufonly'
+Bundle 'tpope/vim-endwise'
+Bundle 'kana/vim-smartinput'
+Bundle 'godlygeek/tabular'
+Bundle 'ntpeters/vim-better-whitespace'
 
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'othree/html5.vim'
-Plugin 'leshill/vim-json'
-Plugin 'groenewege/vim-less'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'briancollins/vim-jst'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-markdown'
-Plugin 'wavded/vim-stylus'
-Plugin 'xsbeats/vim-blade'
-Plugin 'juvenn/mustache.vim'
-Plugin 'aaronj1335/underscore-templates.vim'
-Plugin 'gkz/vim-ls'
-Plugin 'dag/vim2hs'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'tkztmk/vim-vala'
-Plugin 'xolox/vim-lua-ftplugin'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
-Plugin 'wting/rust.vim'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'qbbr/vim-twig'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'hhvm/vim-hack'
+Bundle '2072/PHP-Indenting-for-VIm'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'othree/html5.vim'
+Bundle 'leshill/vim-json'
+Bundle 'groenewege/vim-less'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'briancollins/vim-jst'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'wavded/vim-stylus'
+Bundle 'xsbeats/vim-blade'
+Bundle 'juvenn/mustache.vim'
+Bundle 'aaronj1335/underscore-templates.vim'
+Bundle 'gkz/vim-ls'
+Bundle 'dag/vim2hs'
+Bundle 'raichoo/purescript-vim'
+Bundle 'lambdatoast/elm.vim'
+Bundle 'tkztmk/vim-vala'
+Bundle 'xolox/vim-lua-ftplugin'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
+Bundle 'wting/rust.vim'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'qbbr/vim-twig'
+Bundle 'JuliaLang/julia-vim'
+Bundle 'hhvm/vim-hack'
 
-Plugin 'daylerees/colour-schemes'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'w0ng/vim-hybrid'
-Plugin '29decibel/codeschool-vim-theme'
-Plugin 'croaky/vim-colors-github'
-Plugin 'vim-scripts/darkspectrum'
-Plugin 'zeis/vim-kolor'
-Plugin 'morhetz/gruvbox'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
+Bundle 'daylerees/colour-schemes'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'w0ng/vim-hybrid'
+Bundle '29decibel/codeschool-vim-theme'
+Bundle 'croaky/vim-colors-github'
+Bundle 'vim-scripts/darkspectrum'
+Bundle 'zeis/vim-kolor'
+Bundle 'morhetz/gruvbox'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 
 filetype plugin indent on
 
@@ -150,11 +151,9 @@ nnoremap <c-z> <nop>
 " Theme
 syntax on
 set bg=dark
-
 set t_Co=256
-
 if has('gui_running')
-  colorscheme base16-ocean
+  colorscheme base16-paraiso
 else
   colorscheme tomorrow-night
 endif
@@ -175,7 +174,7 @@ set lines=50 columns=160
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-set guifont=Inconsolata\ 12
+set guifont=Ubuntu\ Mono\ 12
 
 " Menus
 set wildmenu
@@ -190,6 +189,9 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
+"
+" Split
+set splitright
 
 " Tabs
 map <c-t> :tabe<cr>
@@ -200,14 +202,10 @@ nnoremap <silent> <leader>l :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <leader>r :execute 'silent! tabmove ' . tabpagenr()<CR>
 set guitablabel=%t\ %M
 
-" Split
-set splitright
-
 " Text wrapping
 set wrap
 set linebreak
 set showbreak=↪
-set nolist
 nnoremap j gj
 nnoremap k gk
 
@@ -216,10 +214,14 @@ set ignorecase
 set hlsearch
 set incsearch
 set smartcase
+map <space> /
 nmap <silent> <leader>/ :set invhlsearch<CR>
 
 " Spelling
 set nospell
+
+set list
+set listchars=nbsp:¬,tab:>-,trail:˷
 
 vnoremap <leader>t :Tabular<space>/
 
@@ -236,13 +238,6 @@ let g:syntastic_auto_loc_list=1
 
 " NERDTree
 nmap <C-e> :NERDTreeToggle<CR>
-
-" Neocomplcache
-"let g:neocomplcache_enable_at_startup=1
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Sessions
 let g:session_autosave='yes'
