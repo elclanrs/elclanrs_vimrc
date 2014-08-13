@@ -1,21 +1,13 @@
 set nocompatible
 filetype off
 
-" Undo
-set undofile
-set undodir=~/.vimundo
-set autochdir
-set autoread
-
-set shell=bash\ --login
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Plugins
 " ------------------------------------------------
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin '907th/vim-auto-save'
 Plugin 'scrooloose/nerdtree'
@@ -74,10 +66,18 @@ Plugin 'chriskempson/base16-vim'
 call vundle#end()
 filetype plugin indent on
 
+" Undo
+set undofile
+set undodir=~/.vimundo
+set autochdir
+set autoread
+
+set shell=bash\ --login
+
 " Autocmd
 " ------------------------------------------------
 
-" Autompletition
+" Autocompletion
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -94,9 +94,11 @@ autocmd FocusLost * silent! wa
 " Open tabs at the end
 autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
 
-" Custom filetypes
+" Filetypes
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead *.wisp set ft=clojure
+autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
 
 " Fix PHP-HTML mixed indentation
 autocmd BufNewFile,BufRead *.php set ft=html | set ft=phtml
@@ -104,10 +106,6 @@ autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
 
 " Trim whitespace on save
 autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
-
-autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
-
-autocmd BufNewFile,BufRead *.wisp set ft=clojure
 
 " Quickfix
 autocmd QuickFixCmdPost [^l]* nested cwindow
@@ -171,7 +169,6 @@ set lines=50 columns=160
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-"set guifont=Ubuntu\ Mono\ 12
 set guifont=Inconsolata\ 12
 
 " Menus
