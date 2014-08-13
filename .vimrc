@@ -68,15 +68,7 @@ Plugin 'qbbr/vim-twig'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'hhvm/vim-hack'
 
-Plugin 'daylerees/colour-schemes'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'w0ng/vim-hybrid'
-Plugin '29decibel/codeschool-vim-theme'
-Plugin 'croaky/vim-colors-github'
-Plugin 'vim-scripts/darkspectrum'
-Plugin 'zeis/vim-kolor'
-Plugin 'morhetz/gruvbox'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
@@ -117,6 +109,11 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set com
 
 autocmd BufNewFile,BufRead *.wisp set ft=clojure
 
+" Quickfix
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" Fix terminal cursor
 "if has("autocmd")
   "au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
   "au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
