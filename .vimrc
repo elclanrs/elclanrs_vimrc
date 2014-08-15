@@ -26,7 +26,6 @@ Plugin 'duff/vim-bufonly'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-smartinput'
 Plugin 'godlygeek/tabular'
-Plugin 'ntpeters/vim-better-whitespace'
 
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'StanAngeloff/php.vim'
@@ -124,22 +123,14 @@ autocmd QuickFixCmdPost    l* nested lwindow
 set hidden
 set lazyredraw
 
+" Basic shortcuts
 nnoremap ; :
 let mapleader=','
 map <leader>; @:
-
 inoremap <C-c> <ESC>
-
-" Save all and exit
 map <c-q> :xa<cr>
-
-" Copy/select all to clipboard
 map <leader>aa gg"+yGggVG
-
-" Open file in Google Chrome
 map <F5> <Esc>:silent !google-chrome %<CR>
-
-" Disabled
 nnoremap Q <nop>
 nnoremap <c-z> <nop>
 
@@ -170,10 +161,6 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
 set guifont=Inconsolata\ 12
-
-" Menus
-set wildmenu
-set wildmode=list:longest,full
 
 " Indentation
 set tabstop=2
@@ -215,10 +202,14 @@ nmap <silent> <leader>/ :set invhlsearch<CR>
 " Spelling
 set nospell
 
+" Menus
+set wildmenu
+set wildmode=list:longest,full
+
+" Whitespace
 set list
 set listchars=nbsp:¬,tab:»·,trail:˷
-
-vnoremap <leader>t :Tabular<space>/
+hi SpecialKey guifg=OrangeRed
 
 " Plugin config
 " ------------------------------------------------
@@ -244,6 +235,9 @@ let g:ctrlp_working_path_mode = 'r'
 
 " Emmet
 imap <C-e> <C-y>,
+
+" Tabular
+vnoremap <leader>t :Tabular<space>/
 
 " Functions
 " ------------------------------------------------
