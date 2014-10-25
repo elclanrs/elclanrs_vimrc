@@ -22,15 +22,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
-Plugin 'duff/vim-bufonly'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-smartinput'
 Plugin 'godlygeek/tabular'
 
-Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'StanAngeloff/php.vim'
+Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'othree/html5.vim'
 Plugin 'leshill/vim-json'
 Plugin 'groenewege/vim-less'
@@ -43,13 +41,11 @@ Plugin 'tpope/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'xsbeats/vim-blade'
 Plugin 'juvenn/mustache.vim'
-Plugin 'aaronj1335/underscore-templates.vim'
 Plugin 'gkz/vim-ls'
 Plugin 'dag/vim2hs'
 Plugin 'raichoo/purescript-vim'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'tkztmk/vim-vala'
-Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'wting/rust.vim'
@@ -61,6 +57,8 @@ Plugin 'hhvm/vim-hack'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
+Plugin 'endel/vim-github-colorscheme'
+Plugin 'jonathanfilip/vim-lucius'
 
 call vundle#end()
 filetype plugin indent on
@@ -108,7 +106,7 @@ autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$/
 
 " Quickfix
 autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
+autocmd QuickFixCmdPost l* nested lwindow
 
 " Fix terminal cursor
 "if has("autocmd")
@@ -141,7 +139,7 @@ set t_Co=256
 if has('gui_running')
   colorscheme base16-paraiso
 else
-  colorscheme tomorrow-night
+  colorscheme Tomorrow-Night
 endif
 
 set cole=0
@@ -160,7 +158,7 @@ set lines=50 columns=160
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-set guifont=Inconsolata\ 12
+set guifont=Meslo\ LG\ M\ DZ\ 10
 
 " Indentation
 set tabstop=2
@@ -171,7 +169,7 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
-"
+
 " Split
 set splitright
 
@@ -215,7 +213,7 @@ hi SpecialKey guifg=OrangeRed
 " ------------------------------------------------
 
 let g:auto_save=1
-let g:used_javascript_lib='jquery,underscore,backbone,angularjs'
+let g:auto_save_in_insert_mode=0
 
 " Syntastic
 let g:syntastic_check_on_open=1
