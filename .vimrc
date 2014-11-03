@@ -53,7 +53,7 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'qbbr/vim-twig'
 Plugin 'JuliaLang/julia-vim'
-Plugin 'hhvm/vim-hack'
+"Plugin 'hhvm/vim-hack'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
@@ -120,6 +120,7 @@ autocmd QuickFixCmdPost l* nested lwindow
 
 set hidden
 set lazyredraw
+set regexpengine=1
 
 " Basic shortcuts
 nnoremap ; :
@@ -169,6 +170,7 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
+set breakindent
 
 " Split
 set splitright
@@ -185,7 +187,7 @@ set guitablabel=%t\ %M
 " Text wrapping
 set wrap
 set linebreak
-set showbreak=↪
+set showbreak=↪\ 
 nnoremap j gj
 nnoremap k gk
 
