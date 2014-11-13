@@ -232,6 +232,7 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'r'
+set wildignore+=*/node_modules/*,*/.git/*
 
 " Emmet
 imap <C-e> <C-y>,
