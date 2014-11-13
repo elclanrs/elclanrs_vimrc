@@ -57,7 +57,7 @@ Plugin 'JuliaLang/julia-vim'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
-Plugin 'endel/vim-github-colorscheme'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'jonathanfilip/vim-lucius'
 
 call vundle#end()
@@ -231,7 +231,7 @@ let g:session_autoload='yes'
 let g:session_default_to_last='yes'
 
 " CtrlP
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode='r'
 set wildignore+=*/node_modules/*,*/.git/*
 
 " Emmet
@@ -239,6 +239,10 @@ imap <C-e> <C-y>,
 
 " Tabular
 vnoremap <leader>t :Tabular<space>/
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 " Functions
 " ------------------------------------------------
