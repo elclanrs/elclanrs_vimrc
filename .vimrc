@@ -89,7 +89,7 @@ autocmd BufEnter * if &filetype == "" | setlocal ft=javascript | endif
 autocmd FocusLost * silent! wa
 
 " Open tabs at the end
-autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
+"autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
 
 " Filetypes
 autocmd BufNewFile,BufRead *.jade set filetype=jade
@@ -232,7 +232,7 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode='r'
-set wildignore+=*/node_modules/*,*/.git/*
+set wildignore+=*/node_modules/*,*/.git/*,*/vendor/*
 
 " Emmet
 imap <C-e> <C-y>,
