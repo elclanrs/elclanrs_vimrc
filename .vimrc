@@ -25,6 +25,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-smartinput'
 Plugin 'godlygeek/tabular'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'StanAngeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
