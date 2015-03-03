@@ -25,10 +25,9 @@ Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-smartinput'
 Plugin 'godlygeek/tabular'
-Plugin 'airblade/vim-gitgutter'
 
-Plugin 'StanAngeloff/php.vim'
-Plugin 'shawncplus/phpcomplete.vim'
+"Plugin 'StanAngeloff/php.vim'
+"Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
 Plugin 'leshill/vim-json'
@@ -43,7 +42,7 @@ Plugin 'wavded/vim-stylus'
 Plugin 'xsbeats/vim-blade'
 Plugin 'juvenn/mustache.vim'
 Plugin 'gkz/vim-ls'
-Plugin 'dag/vim2hs'
+Plugin 'raichoo/haskell-vim'
 Plugin 'raichoo/purescript-vim'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'tkztmk/vim-vala'
@@ -54,6 +53,7 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'qbbr/vim-twig'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'mtscout6/vim-cjsx'
 "Plugin 'hhvm/vim-hack'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -70,7 +70,7 @@ set undodir=~/.vimundo
 set autochdir
 set autoread
 
-set shell=bash\ --login
+set shell=bash\ -i
 
 " Autocmd
 " ------------------------------------------------
@@ -99,8 +99,8 @@ autocmd BufNewFile,BufRead *.wisp set ft=clojure
 autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
 
 " Fix PHP-HTML mixed indentation
-autocmd BufNewFile,BufRead *.php set ft=html | set ft=phtml
-autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
+"autocmd BufNewFile,BufRead *.php set ft=html | set ft=phtml
+"autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
 
 " Trim whitespace on save
 autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -139,7 +139,8 @@ syntax on
 set bg=dark
 set t_Co=256
 if has('gui_running')
-  colorscheme base16-paraiso
+  "colorscheme base16-paraiso
+  colorscheme base16-atelierlakeside
 else
   colorscheme Tomorrow-Night
 endif
@@ -171,7 +172,7 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
-set breakindent
+"set breakindent
 
 " Split
 set splitright
@@ -222,6 +223,7 @@ let g:auto_save_in_insert_mode=0
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_javascript_checkers=['jsxhint']
 
 " NERDTree
 nmap <C-e> :NERDTreeToggle<CR>
