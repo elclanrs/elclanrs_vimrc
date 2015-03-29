@@ -89,18 +89,11 @@ autocmd BufEnter * if &filetype == "" | setlocal ft=javascript | endif
 " Save on losing focus
 autocmd FocusLost * silent! wa
 
-" Open tabs at the end
-"autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
-
 " Filetypes
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd BufNewFile,BufRead *.wisp set ft=clojure
 autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set completeopt-=preview
-
-" Fix PHP-HTML mixed indentation
-"autocmd BufNewFile,BufRead *.php set ft=html | set ft=phtml
-"autocmd BufNewFile,BufRead *.blade.php set ft=html | set ft=phtml | set ft=blade
 
 " Trim whitespace on save
 autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -108,13 +101,6 @@ autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$/
 " Quickfix
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
-
-" Fix terminal cursor
-"if has("autocmd")
-  "au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  "au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  "au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-"endif
 
 " User config
 " ------------------------------------------------
@@ -139,7 +125,6 @@ syntax on
 set bg=dark
 set t_Co=256
 if has('gui_running')
-  "colorscheme base16-paraiso
   colorscheme base16-atelierlakeside
 else
   colorscheme Tomorrow-Night
@@ -172,7 +157,7 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
-"set breakindent
+set breakindent
 
 " Split
 set splitright
@@ -215,6 +200,9 @@ hi SpecialKey guifg=OrangeRed
 
 " Plugin config
 " ------------------------------------------------
+
+let g:syntastic_mode_map={'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
+map <leader>ee :SyntasticCheck<CR>
 
 let g:auto_save=1
 let g:auto_save_in_insert_mode=0
