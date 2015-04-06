@@ -157,7 +157,9 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
-set breakindent
+if has('gui_running')
+  set breakindent
+endif
 
 " Split
 set splitright
