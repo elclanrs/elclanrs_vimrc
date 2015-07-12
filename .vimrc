@@ -55,11 +55,14 @@ Plugin 'qbbr/vim-twig'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'mtscout6/vim-cjsx'
 "Plugin 'hhvm/vim-hack'
+Plugin 'facebook/vim-flow'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'chriskempson/base16-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jonathanfilip/vim-lucius'
+Plugin 'duythinht/inori'
+Plugin 'abra/vim-abra'
 
 call vundle#end()
 filetype plugin indent on
@@ -157,9 +160,7 @@ set autoindent
 set copyindent
 set preserveindent
 set nofoldenable
-if has('gui_running')
-  set breakindent
-endif
+set breakindent
 
 " Split
 set splitright
@@ -169,8 +170,8 @@ map <c-t> :tabe<cr>
 map <c-w> :bd<cr>
 map <s-e> :tabn<cr>
 map <s-q> :tabp<cr>
-nnoremap <silent> <leader>l :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <leader>r :execute 'silent! tabmove ' . tabpagenr()<CR>
+map <leader>l :execute 'tabmove' tabpagenr()-2 <CR>
+map <leader>r :execute 'tabmove' tabpagenr()+1 <CR>
 set guitablabel=%t\ %M
 
 " Text wrapping
@@ -206,7 +207,7 @@ hi SpecialKey guifg=OrangeRed
 let g:syntastic_mode_map={'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
 map <leader>ee :SyntasticCheck<CR>
 
-let g:auto_save=1
+let g:auto_save=0
 let g:auto_save_in_insert_mode=0
 
 " Syntastic
@@ -236,6 +237,9 @@ vnoremap <leader>t :Tabular<space>/
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
+
+" Flow
+let g:flow#enable=0
 
 " Functions
 " ------------------------------------------------
