@@ -1,3 +1,4 @@
+
 set nocompatible
 filetype off
 
@@ -11,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin '907th/vim-auto-save'
 Plugin 'scrooloose/nerdtree'
+"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -25,6 +27,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-smartinput'
 Plugin 'godlygeek/tabular'
+Plugin 'dkprice/vim-easygrep'
 
 "Plugin 'StanAngeloff/php.vim'
 "Plugin 'shawncplus/phpcomplete.vim'
@@ -110,7 +113,7 @@ autocmd QuickFixCmdPost l* nested lwindow
 
 set hidden
 set lazyredraw
-set regexpengine=1
+"set regexpengine=1
 
 " Basic shortcuts
 nnoremap ; :
@@ -129,6 +132,7 @@ set bg=dark
 set t_Co=256
 if has('gui_running')
   colorscheme base16-atelierlakeside
+  set linespace=2
 else
   colorscheme Tomorrow-Night
 endif
@@ -149,7 +153,7 @@ set lines=50 columns=160
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-set guifont=Meslo\ LG\ M\ DZ\ 10
+set guifont=Menlo:h12
 
 " Indentation
 set tabstop=2
@@ -167,7 +171,7 @@ set splitright
 
 " Tabs
 map <c-t> :tabe<cr>
-map <c-w> :bd<cr>
+"map <c-w> :bd<cr>
 map <s-e> :tabn<cr>
 map <s-q> :tabp<cr>
 map <leader>l :execute 'tabmove' tabpagenr()-2 <CR>
@@ -218,6 +222,7 @@ let g:syntastic_javascript_checkers=['jsxhint']
 
 " NERDTree
 nmap <C-e> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='<ENTER>'
 
 " Sessions
 let g:session_autosave='yes'
@@ -226,6 +231,7 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode='r'
+let g:ctrlp_show_hidden=1
 set wildignore+=*/node_modules/*,*/.git/*,*/vendor/*
 
 " Emmet
