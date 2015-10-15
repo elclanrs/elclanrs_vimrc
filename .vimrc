@@ -1,4 +1,3 @@
-
 set nocompatible
 filetype off
 
@@ -12,7 +11,6 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin '907th/vim-auto-save'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -113,7 +111,7 @@ autocmd QuickFixCmdPost l* nested lwindow
 
 set hidden
 set lazyredraw
-"set regexpengine=1
+set regexpengine=1
 
 " Basic shortcuts
 nnoremap ; :
@@ -132,7 +130,6 @@ set bg=dark
 set t_Co=256
 if has('gui_running')
   colorscheme base16-atelierlakeside
-  set linespace=2
 else
   colorscheme Tomorrow-Night
 endif
@@ -153,7 +150,7 @@ set lines=50 columns=160
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set guioptions-=T
-set guifont=Menlo:h12
+set guifont=Meslo\ LG\ M\ DZ\ 10
 
 " Indentation
 set tabstop=2
@@ -171,7 +168,7 @@ set splitright
 
 " Tabs
 map <c-t> :tabe<cr>
-"map <c-w> :bd<cr>
+map <c-w> :bd<cr>
 map <s-e> :tabn<cr>
 map <s-q> :tabp<cr>
 map <leader>l :execute 'tabmove' tabpagenr()-2 <CR>
@@ -231,7 +228,6 @@ let g:session_default_to_last='yes'
 
 " CtrlP
 let g:ctrlp_working_path_mode='r'
-let g:ctrlp_show_hidden=1
 set wildignore+=*/node_modules/*,*/.git/*,*/vendor/*
 
 " Emmet
@@ -254,4 +250,4 @@ map <S-F5> :call Compile() <cr>
 function Compile()
   "silent! exec "! browserify -d -t es6ify % > bundle.js"
   exec "! browserify -d -t es6ify % | node"
-endfunction
+endfunctiong
