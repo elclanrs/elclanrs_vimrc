@@ -1,4 +1,4 @@
-set nocompatible
+ectet nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -43,6 +43,7 @@ Plugin 'raichoo/haskell-vim'
 Plugin 'raichoo/purescript-vim'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'mxw/vim-jsx'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'facebook/vim-flow'
 "Plugin 'xsbeats/vim-blade'
@@ -232,6 +233,9 @@ vnoremap <leader>t :Tabular<space>/
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
+
+" JSX
+let g:jsx_ext_required=0
 
 " Flow
 let g:flow#enable=0
