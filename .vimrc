@@ -71,6 +71,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'rakr/vim-one'
 Plugin 'jwhitley/vim-colors-solarized'
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -180,13 +181,18 @@ set splitright
 " Tabs
 "map <C-t> :tabe<CR>
 "map <C-w> :bd<CR>
-map <leader>t :tabe<CR>
-map <leader>w :bd<CR>
-map <S-e> :tabn<CR>
-map <S-q> :tabp<CR>
+"map <leader>t :tabe<CR>
+"map <leader>w :bd<CR>
+"map <S-e> :tabn<CR>
+"map <S-q> :tabp<CR>
 map <leader>l :execute 'tabmove' tabpagenr()-2 <CR>
 map <leader>r :execute 'tabmove' tabpagenr()+1 <CR>
 set guitablabel=%t\ %M
+
+" Buffers
+map <S-e> :bn<CR>
+map <S-q> :bp<CR>
+
 
 " Text wrapping
 set wrap
@@ -266,6 +272,8 @@ let g:jsx_ext_required=0
 
 " Airline
 let g:airline_powerline_fonts=0
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#fnamemod=':t'
 
 " TypeScript
 let g:typescript_compiler_binary='tsc'
