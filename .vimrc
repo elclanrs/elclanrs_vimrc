@@ -190,6 +190,8 @@ map <leader>r :execute 'tabmove' tabpagenr()+1 <CR>
 set guitablabel=%t\ %M
 
 " Buffers
+map <leader>t :enew<CR>
+map <leader>w :bd<CR>
 map <S-e> :bn<CR>
 map <S-q> :bp<CR>
 
