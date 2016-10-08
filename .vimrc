@@ -29,6 +29,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'mileszs/ack.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
