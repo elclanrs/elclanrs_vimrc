@@ -193,7 +193,6 @@ set guitablabel=%t\ %M
 map <S-e> :bn<CR>
 map <S-q> :bp<CR>
 
-
 " Text wrapping
 set wrap
 set linebreak
