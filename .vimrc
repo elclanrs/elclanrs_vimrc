@@ -30,6 +30,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
@@ -115,7 +116,6 @@ set hidden
 set lazyredraw
 set regexpengine=1
 
-
 " Basic shortcuts
 nnoremap ; :
 let mapleader=','
@@ -155,6 +155,7 @@ set ruler
 set laststatus=2
 set scrolloff=5
 set relativenumber
+set backspace=2
 
 if has('gui_running')
   set lines=50 columns=160 linespace=3
@@ -220,7 +221,7 @@ set wildmode=list:longest,full
 " Whitespace
 set list
 set listchars=nbsp:¬,tab:»·,trail:˷
-hi SpecialKey guifg=OrangeRed
+hi SpecialKey ctermfg=255 ctermbg=124 guifg=OrangeRed
 
 " Plugin config
 " ------------------------------------------------
@@ -241,6 +242,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 hi SpellBad ctermfg=255 ctermbg=124
 highlight link SyntasticErrorSign SpellBad
 highlight link SyntasticStyleErrorSign SpellBad
+let g:syntastic_mode_map = {'passive_filetypes': ['html']}
 
 " NERDTree
 nmap <C-e> :NERDTreeToggle<CR>
