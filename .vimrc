@@ -103,8 +103,8 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set com
 autocmd FileType php,javascript,css,styl autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Quickfix
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost l* nested lwindow
+"autocmd QuickFixCmdPost [^l]* nested cwindow
+"autocmd QuickFixCmdPost l* nested lwindow
 
 " Menus
 autocmd FileType typescript setlocal completeopt+=menu,preview
@@ -221,7 +221,7 @@ set wildmode=list:longest,full
 " Whitespace
 set list
 set listchars=nbsp:¬,tab:»·,trail:˷
-hi SpecialKey ctermfg=255 ctermbg=124 guifg=OrangeRed
+hi SpecialKey ctermfg=red guifg=OrangeRed
 
 " Plugin config
 " ------------------------------------------------
@@ -246,6 +246,9 @@ let g:syntastic_mode_map = {'passive_filetypes': ['html']}
 
 " NERDTree
 nmap <C-e> :NERDTreeToggle<CR>
+
+" NERDCommenter
+let NERDSpaceDelims=1
 
 " Sessions
 let g:session_autosave='yes'
@@ -284,5 +287,6 @@ let g:typescript_compiler_options=''
 
 " Tsuquyomi
 let g:tsuquyomi_disable_quickfix=1
-let g:syntastic_typescript_checkers=['tsuquyomi']
+let g:syntastic_typescript_checkers=['tsuquyomi', 'tslint']
 autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+map <leader>ee :TsuGeterr<CR>
