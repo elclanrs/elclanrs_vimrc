@@ -31,6 +31,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'mhartington/deoplete-typescript'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
@@ -266,7 +268,11 @@ imap <C-e> <C-y>,
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 
+" Deoplete
+let g:deoplete#enable_at_startup=1
+
 " YouCompleteMe
+let g:enable_ycm_at_startup=0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_autoclose_preview_window_after_insertion=1
 
